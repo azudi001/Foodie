@@ -16,7 +16,7 @@ export default Text;
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'Lato',
+        fontFamily: 'Poppins',
         color: '#fff'
     }
 });

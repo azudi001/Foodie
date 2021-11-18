@@ -6,6 +6,8 @@ import { theme } from '../theme';
 
 const CONTAINER_HEIGHT = 180;
 
+const BORDER_WIDTH = 380;
+
 const Border = () => (
     <>
         <View
@@ -14,7 +16,7 @@ const Border = () => (
                 bottom: 1,
                 height: StyleSheet.hairlineWidth,
                 backgroundColor: theme.border,
-                width: '90%',
+                width: BORDER_WIDTH,
             }}
         />
         <View
@@ -25,7 +27,7 @@ const Border = () => (
                 backgroundColor: theme.border1,
                 borderBottomLeftRadius: 10,
                 borderBottomRightRadius: 10,
-                width: '90%',
+                width: BORDER_WIDTH,
                 zIndex: -1,
             }}
         />
@@ -44,7 +46,7 @@ const TotalSaved = ({
         <Text style={{
             fontSize: 47,
             fontWeight: '400',
-            letterSpacing: 2,
+            letterSpacing: 1,
             textAlign: 'center',
         }}>$2,340</Text>
 
