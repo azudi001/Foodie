@@ -4,5 +4,6 @@ export const theme = {
     card: '#494B5B',
     card2: '#2D2F3E',
     textPrimary: '#fff',
-    textSecondary: '#7D7F8D'
+    textSecondary: '#7D7F8D',
+    icon: '#7D7F8D'
 };
