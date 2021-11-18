@@ -16,6 +16,7 @@ export default Text;
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'Ubuntu'
+        // fontFamily: 'Ubuntu'
+        color: '#fff'
     }
 });

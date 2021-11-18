@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import MC from '../shared/MC';
 import { theme } from '../theme';
 import CreateSavingButton from './CreateSavingButton';
 import GroupSavings from './GroupSavings';
@@ -14,16 +15,25 @@ const Home = () => {
             backgroundColor: theme.primary
         }}>
 
-            <Header />
+            <MC>
+                <Header />
+            </MC>
 
-            <TotalSaved />
+            <MC>
+                <TotalSaved />
+            </MC>
 
-            <GroupSavings />
+            <MC>
+                <GroupSavings />
+            </MC>
 
-            <PersonalSavings />
+            <MC>
+                <PersonalSavings />
+            </MC>
 
-            <CreateSavingButton />
-
+            <MC>
+                <CreateSavingButton />
+            </MC>
 
         </View>
     );
