@@ -14,7 +14,7 @@ const GroupSavings = ({
 
         borderWidth: 1
     }}>
-        <View
+        {/* <View
             style={{
                 paddingHorizontal: LAYOUT_HORIZONTAL_PADDING,
             }}
@@ -24,10 +24,12 @@ const GroupSavings = ({
                 withViewButton
             />
         </View>
-        <Space size={5} />
+        <Space size={5} /> */}
 
         <View style={{
-            marginVertical: 10
+            marginVertical: 10,
+            borderWidth: 1,
+            borderColor: 'red'
         }}>
             <CardList />
         </View>

@@ -67,7 +67,7 @@ const CardList = ({
                 justifyContent: 'center',
                 alignItems: 'center',
             }} pointerEvents="box-none">
-
+                <Card {...{ item }} />
             </View>
         ))}
     </View>

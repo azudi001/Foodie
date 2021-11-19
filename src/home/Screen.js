@@ -5,7 +5,7 @@ import CreateSavingButton from './CreateSavingButton';
 import GroupSavings from './GroupSavings';
 import Header from './Header';
 import PersonalSavings from './PersonalSavings';
-import TotalSaved from './TotalSaved';
+import TotalSaved from './Title';
 
 const Home = () => {
     return (
