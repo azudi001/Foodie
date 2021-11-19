@@ -5,7 +5,7 @@ import Space from '../shared/Space';
 import { theme } from '../theme';
 import { LAYOUT_HORIZONTAL_PADDING } from '../utils';
 
-// const CONTAINER_HEIGHT = 120;
+const CONTAINER_HEIGHT = 140;
 
 const BORDER_WIDTH = 380;
 
@@ -40,11 +40,13 @@ const TotalSaved = ({
 }) => (
     <View style={{
         // display: 'flex',
-        // height: CONTAINER_HEIGHT,
+        height: CONTAINER_HEIGHT,
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingHorizontal: LAYOUT_HORIZONTAL_PADDING,
         paddingVertical: 20,
+        borderBottomWidth: 1
+        // backgroundColor: 'yellow'
     }}>
 
         <Text style={{

@@ -5,6 +5,7 @@ import CreateSavingButton from './CreateSavingButton';
 import GroupSavings from './GroupSavings';
 import Header from './Header';
 import PersonalSavings from './PersonalSavings';
+import TopTabs from './TopTabs';
 import TotalSaved from './Title';
 
 const Home = () => {
@@ -22,16 +23,16 @@ const Home = () => {
             <TotalSaved />
 
 
-
-            <GroupSavings />
-
-
-
-            <PersonalSavings />
+            <TopTabs />
+            {/* <GroupSavings /> */}
 
 
 
-            <CreateSavingButton />
+            {/* <PersonalSavings /> */}
+
+
+
+            {/* <CreateSavingButton /> */}
 
 
         </View>

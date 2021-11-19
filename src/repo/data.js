@@ -1,104 +1,60 @@
 export const groupSavings = [
     {
         id: 1,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img1.png'),
-            },
-            {
-                source: require('../../assets/images/img2.png'),
-            },
-            {
-                source: require('../../assets/images/img3.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/burger2.gif')
     },
     {
         id: 2,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img9.png'),
-            },
-            {
-                source: require('../../assets/images/img3.png'),
-            },
-            {
-                source: require('../../assets/images/img2.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/burger1.gif')
     },
     {
         id: 3,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img8.png'),
-            },
-            {
-                source: require('../../assets/images/img4.png'),
-            },
-            {
-                source: require('../../assets/images/img9.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/drink.gif')
     },
     {
         id: 4,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img10.png'),
-            },
-            {
-                source: require('../../assets/images/img2.png'),
-            },
-            {
-                source: require('../../assets/images/img6.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/hotdog.gif')
     },
     {
         id: 5,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img4.png'),
-            },
-            {
-                source: require('../../assets/images/img2.png'),
-            },
-            {
-                source: require('../../assets/images/img1.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/beer.gif')r
     },
     {
         id: 6,
-        title: 'Family Road Trip',
-        members: [
-            {
-                source: require('../../assets/images/img1.png'),
-            },
-            {
-                source: require('../../assets/images/img5.png'),
-            },
-            {
-                source: require('../../assets/images/img8.png'),
-            },
-        ],
-        cost: 12500,
-        percentage: 23
+        // img: require('../../assets/images/noodles.gif')
+    }
+];
+
+
+export const tabData = [
+    {
+        id: 1,
+        title: 'All',
+        // icon: require('../../assets/icons/burger.svg')
+    },
+    {
+        id: 2,
+        title: 'Burgers',
+        // icon: require('../../assets/icons/burger2.gif')
+    },
+    {
+        id: 3,
+        title: 'Pizza',
+        // icon: require('../../assets/icons/noodles.gif')
+    },
+    {
+        id: 4,
+        title: 'Specials',
+        // icon: require('../../assets/icons/specials.gif')
+    },
+    {
+        id: 5,
+        title: 'Mixes',
+        // icon: require('../../assets/icons/beer.gif')
+    },
+    {
+        id: 6,
+        title: 'Family',
+        // icon: require('../../assets/icons/hotdog.gif')
     },
 ];

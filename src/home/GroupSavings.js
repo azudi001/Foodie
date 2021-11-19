@@ -9,31 +9,10 @@ import SectionHeader from './SectionHeader';
 const GroupSavings = ({
     params,
 }) => (
-    <View style={{
-        paddingVertical: 30,
 
-        borderWidth: 1
-    }}>
-        {/* <View
-            style={{
-                paddingHorizontal: LAYOUT_HORIZONTAL_PADDING,
-            }}
-        >
-            <SectionHeader
-                title='Group Savings'
-                withViewButton
-            />
-        </View>
-        <Space size={5} /> */}
 
-        <View style={{
-            marginVertical: 10,
-            borderWidth: 1,
-            borderColor: 'red'
-        }}>
-            <CardList />
-        </View>
-    </View>
+    <CardList />
+
 );
 
 export default GroupSavings;
