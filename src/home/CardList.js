@@ -23,38 +23,37 @@ const LIST_HEIGHT = 200;
 const CARD_HEIGHT = 280;
 const CARD_BORDER_RADIUS = 26;
 
-const CARD_WIDTH = width - 100;
+const CARD_WIDTH = width - 80;
 // const side = (width + CARD_WIDTH + 200) / 2;
 const SPAN_POINTS = [-width, 0, width];
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 const CardList = ({
     params,
 }) => (
     <View style={{
-        height: height - (HEADER_HEIGHT - 100),
+        height: CARD_HEIGHT,
         width: width,
-        borderWidth: 1
+        position: 'relative',
+        marginVertical: 25,
+        marginTop: 40
     }}>
-
-        {groupSavings.map((item, index) => (
-            // <View style={{
-            // ...StyleSheet.absoluteFillObject,
-            // justifyContent: 'center',
-            // alignItems: 'center',
-            // }} pointerEvents="box-none"> 
-            //     <PanGestureHandler>
-            //     <Card {...{ item }} />
-            //     </PanGestureHandler>
-            // </View>
-            <Card
-                key={item.id}
-                {... { item }}
-                {...{ index }}
-            />
-        ))}
+        <View>
+            {groupSavings.map((item, index) => (
+                <Card
+                    key={item.id}
+                    {... { item }}
+                    {...{ index }}
+                />
+            ))}
+        </View>
     </View>
 );
+
 
 
 
@@ -62,7 +61,8 @@ const Card = ({ item, index }) => {
 
     const x = useSharedValue(0);
     const y = useSharedValue(-height);
-    const theta = Math.random() * 20 - 7;
+    // const theta = Math.random() * 20 - 18;
+    const theta = randomNumber(-3, 3);
     const rotateZ = useSharedValue(0);
     const rotateX = useSharedValue(30);
     const scale = useSharedValue(1);
@@ -86,16 +86,21 @@ const Card = ({ item, index }) => {
 
 
     const onGestureEvent = useAnimatedGestureHandler({
+
         onStart: (_, ctx) => {
             ctx.x = x.value;
             ctx.y = y.value;
-            scale.value = withTiming(1.2, { easing: Easing.inOut(Easing.ease) });
+            scale.value = withTiming(1.1, { easing: Easing.inOut(Easing.ease) });
             rotateZ.value = withTiming(0, { easing: Easing.inOut(Easing.ease) });
             rotateX.value = withTiming(0, { easing: Easing.inOut(Easing.ease) });
         },
         onActive: ({ translationX, translationY }, ctx) => {
+            if (translationY < -90) {
+                y.value = ctx.y + (-90);
+            } else {
+                y.value = ctx.y + translationY;
+            }
             x.value = ctx.x + translationX;
-            y.value = ctx.y + translationY;
         },
         onEnd: ({ velocityX, velocityY, translationX, translationY }) => {
             const dest = snapPoint(x.value, velocityX, SPAN_POINTS);
@@ -131,8 +136,11 @@ const Card = ({ item, index }) => {
     return (
         <View style={{
             ...StyleSheet.absoluteFillObject,
+
             // justifyContent: 'center',
             alignItems: 'center',
+            backgroundColor: 'yellow'
+            // zIndex: 2
         }} pointerEvents="box-none">
             <PanGestureHandler on onGestureEvent={onGestureEvent}>
                 <Animated.View style={[styles.cardDefaultStyle, style]}>
@@ -140,9 +148,9 @@ const Card = ({ item, index }) => {
                         source={item.img}
                         style={{
                             height: CARD_HEIGHT * .8,
-                            width: CARD_WIDTH - 20,
+                            width: '100%',
                             resizeMode: 'cover',
-                            borderWidth: 1,
+                            // borderWidth: 1.5,
                             borderRadius: CARD_BORDER_RADIUS,
                         }}
                     />
@@ -174,16 +182,23 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        padding: 9,
+        padding: 12,
         // margin: 10,
         borderRadius: CARD_BORDER_RADIUS,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 2,
+        // },
+        // shadowOpacity: 0.25,
+        // shadowRadius: 3.84,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 3,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowOpacity: 0.15,
+        shadowRadius: 4.65,
         elevation: 5,
     }
 });

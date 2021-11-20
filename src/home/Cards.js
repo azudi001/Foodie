@@ -6,13 +6,10 @@ import { LAYOUT_HORIZONTAL_PADDING } from '../utils';
 import CardList from './CardList';
 import SectionHeader from './SectionHeader';
 
-const GroupSavings = ({
+const Cards = ({
     params,
 }) => (
-
-
     <CardList />
-
 );
 
-export default GroupSavings;
+export default Cards;

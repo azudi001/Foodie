@@ -45,7 +45,7 @@ const TotalSaved = ({
         alignItems: 'flex-start',
         paddingHorizontal: LAYOUT_HORIZONTAL_PADDING,
         paddingVertical: 20,
-        borderBottomWidth: 1
+        // borderBottomWidth: 1
         // backgroundColor: 'yellow'
     }}>
 

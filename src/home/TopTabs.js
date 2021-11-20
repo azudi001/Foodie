@@ -7,19 +7,16 @@ import BurgerIcon from '../../assets/icons/burger.svg';
 
 const tabIcon = {
     'All': (<BurgerIcon height={32} width={32} />),
-
 };
 
 const TopTabs = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
-
 
     return (
         <View style={{
             height: 50,
             width: '100%',
             borderBottomWidth: 1
-            // backgroundColor: 'yellow'
         }}>
             <ScrollView
                 horizontal
@@ -32,6 +29,7 @@ const TopTabs = () => {
 
                     return (
                         <Tab
+                            key={index}
                             {...{ index }}
                             {...{ title }}
                             {...{ selectedIndex }}
@@ -87,11 +85,11 @@ const Tab = ({
                         <View
                             style={{
                                 position: 'absolute',
-                                height: 16,
+                                height: 13,
                                 width: layoutW - 30,
                                 bottom: 10,
                                 left: 18,
-                                backgroundColor: 'rgba(255, 165, 0, .6)',
+                                backgroundColor: 'rgba(255, 162, 39, .6)',
                             }}
                         />
                     )

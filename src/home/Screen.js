@@ -1,12 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { theme } from '../theme';
 import CreateSavingButton from './CreateSavingButton';
-import GroupSavings from './GroupSavings';
+import Cards from './Cards';
 import Header from './Header';
 import PersonalSavings from './PersonalSavings';
 import TopTabs from './TopTabs';
 import TotalSaved from './Title';
+import Text from '../shared/Text';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -18,15 +20,24 @@ const Home = () => {
 
             <Header />
 
+            <ScrollView>
+
+                <TotalSaved />
 
 
-            <TotalSaved />
+                <TopTabs />
 
 
-            <TopTabs />
-            {/* <GroupSavings /> */}
+                <Cards />
 
+                <View style={{
+                    zIndex: -1,
+                    // borderTopWidth: 1,
 
+                }}>
+                    <Reviews />
+                </View>
+            </ScrollView>
 
             {/* <PersonalSavings /> */}
 

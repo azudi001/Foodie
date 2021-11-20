@@ -16,7 +16,7 @@ export default Text;
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'Poppins',
+        fontFamily: 'Maven Pro',
         color: 'black'
     }
 });
