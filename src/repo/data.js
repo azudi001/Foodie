@@ -64,14 +64,14 @@ export const tabData = [
 export const reviews = [
     {
         id: 1,
-        bgImg: require('../../assets/images/casey-lee-salmon-unsplash.jpg'),
+        bgImg: require('../../assets/images/mario-burger-unsplash.jpg'),
         review: '',
         rating: 4.3,
         likes: 53300,
     },
     {
         id: 2,
-        bgImg: require('../../assets/images/casey-lee-salmon-unsplash.jpg'),
+        bgImg: require('../../assets/images/mario-burger-unsplash.jpg'),
         review: '',
         rating: 4.3,
         likes: 53300,

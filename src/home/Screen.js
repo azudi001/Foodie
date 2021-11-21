@@ -4,7 +4,7 @@ import { theme } from '../theme';
 import CreateSavingButton from './CreateSavingButton';
 import Cards from './Cards';
 import Header from './Header';
-import PersonalSavings from './PersonalSavings';
+// import PersonalSavings from './PersonalSavings';
 import TopTabs from './TopTabs';
 import TotalSaved from './Title';
 import Text from '../shared/Text';
