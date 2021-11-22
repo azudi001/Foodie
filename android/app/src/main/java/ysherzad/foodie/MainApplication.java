@@ -1,4 +1,4 @@
-package com.walle;
+package ysherzad.foodie;
 
 import android.app.Application;
 import android.content.Context;
@@ -70,7 +70,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.walle.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("ysherzad.foodie.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* WalleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WalleTests.m */; };
+		00E356F31AD99517003FC87E /* foodieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* foodieTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3304F449E037821788CFA8BD /* libPods-Walle-WalleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C51C1F4993159B141D6BC1 /* libPods-Walle-WalleTests.a */; };
+		3304F449E037821788CFA8BD /* libPods-foodie-foodieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C51C1F4993159B141D6BC1 /* libPods-foodie-foodieTests.a */; };
 		5659A6C18A8041F0BDE416D4 /* MavenPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0925C948EB4401CA8E31EBA /* MavenPro-Black.ttf */; };
 		7A31B170A3BF473FABED2EC9 /* MavenPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 279D97EF4BB7406AB443B2E6 /* MavenPro-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		C466D4CBBEA74E7A9BDE6D83 /* MavenPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C5A01748B345DF98634171 /* MavenPro-Bold.ttf */; };
 		DACC0090B9634CF6888E8635 /* MavenPro-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0C82FEA34764A62854AACB4 /* MavenPro-ExtraBold.ttf */; };
 		DF336EC288C5425E8415A84F /* MavenPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6186BE9F6A244BF5ADEFF823 /* MavenPro-Regular.ttf */; };
-		FED8F8F145C791B57FD29387 /* libPods-Walle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82800F12BD040F79C54371 /* libPods-Walle.a */; };
+		FED8F8F145C791B57FD29387 /* libPods-foodie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82800F12BD040F79C54371 /* libPods-foodie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,34 +28,34 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Walle;
+			remoteInfo = foodie;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* WalleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* foodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* WalleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalleTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Walle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Walle/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Walle/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Walle/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Walle/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Walle/main.m; sourceTree = "<group>"; };
-		22169CAADCE108E95A50A854 /* Pods-Walle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walle.debug.xcconfig"; path = "Target Support Files/Pods-Walle/Pods-Walle.debug.xcconfig"; sourceTree = "<group>"; };
-		279D97EF4BB7406AB443B2E6 /* MavenPro-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-SemiBold.ttf"; path = "../assets/fonts/MavenPro-SemiBold.ttf"; sourceTree = "<group>"; };
-		36C5A01748B345DF98634171 /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Bold.ttf"; path = "../assets/fonts/MavenPro-Bold.ttf"; sourceTree = "<group>"; };
-		6186BE9F6A244BF5ADEFF823 /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Regular.ttf"; path = "../assets/fonts/MavenPro-Regular.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Walle/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0925C948EB4401CA8E31EBA /* MavenPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Black.ttf"; path = "../assets/fonts/MavenPro-Black.ttf"; sourceTree = "<group>"; };
-		B5C51C1F4993159B141D6BC1 /* libPods-Walle-WalleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Walle-WalleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC82800F12BD040F79C54371 /* libPods-Walle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Walle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0C82FEA34764A62854AACB4 /* MavenPro-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-ExtraBold.ttf"; path = "../assets/fonts/MavenPro-ExtraBold.ttf"; sourceTree = "<group>"; };
-		E37D2899B50143BAA8FC57A7 /* MavenPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Medium.ttf"; path = "../assets/fonts/MavenPro-Medium.ttf"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* foodieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodieTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = foodie/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = foodie/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = foodie/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = foodie/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = foodie/main.m; sourceTree = "<group>"; };
+		22169CAADCE108E95A50A854 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
+		279D97EF4BB7406AB443B2E6 /* MavenPro-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-SemiBold.ttf"; path = "../assets/fonts/MavenPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		36C5A01748B345DF98634171 /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Bold.ttf"; path = "../assets/fonts/MavenPro-Bold.ttf"; sourceTree = "<group>"; };
+		6186BE9F6A244BF5ADEFF823 /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Regular.ttf"; path = "../assets/fonts/MavenPro-Regular.ttf"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = foodie/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0925C948EB4401CA8E31EBA /* MavenPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Black.ttf"; path = "../assets/fonts/MavenPro-Black.ttf"; sourceTree = "<group>"; };
+		B5C51C1F4993159B141D6BC1 /* libPods-foodie-foodieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodie-foodieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC82800F12BD040F79C54371 /* libPods-foodie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C82FEA34764A62854AACB4 /* MavenPro-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-ExtraBold.ttf"; path = "../assets/fonts/MavenPro-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E37D2899B50143BAA8FC57A7 /* MavenPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Medium.ttf"; path = "../assets/fonts/MavenPro-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F6D435CFBE34A1E96D726903 /* Pods-Walle-WalleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walle-WalleTests.debug.xcconfig"; path = "Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F7E5D94C2C1A3998F663BE55 /* Pods-Walle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walle.release.xcconfig"; path = "Target Support Files/Pods-Walle/Pods-Walle.release.xcconfig"; sourceTree = "<group>"; };
-		FDD197651AC3B4D105D24FFD /* Pods-Walle-WalleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walle-WalleTests.release.xcconfig"; path = "Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6D435CFBE34A1E96D726903 /* Pods-foodie-foodieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie-foodieTests.debug.xcconfig"; path = "Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7E5D94C2C1A3998F663BE55 /* Pods-foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.release.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.release.xcconfig"; sourceTree = "<group>"; };
+		FDD197651AC3B4D105D24FFD /* Pods-foodie-foodieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie-foodieTests.release.xcconfig"; path = "Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3304F449E037821788CFA8BD /* libPods-Walle-WalleTests.a in Frameworks */,
+				3304F449E037821788CFA8BD /* libPods-foodie-foodieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,20 +71,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED8F8F145C791B57FD29387 /* libPods-Walle.a in Frameworks */,
+				FED8F8F145C791B57FD29387 /* libPods-foodie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* WalleTests */ = {
+		00E356EF1AD99517003FC87E /* foodieTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* WalleTests.m */,
+				00E356F21AD99517003FC87E /* foodieTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = WalleTests;
+			path = foodieTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -95,7 +95,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Walle */ = {
+		13B07FAE1A68108700A75B9A /* foodie */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -105,16 +105,16 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Walle;
+			name = foodie;
 			sourceTree = "<group>";
 		};
 		21BF4267F9826AC41E7E2624 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				22169CAADCE108E95A50A854 /* Pods-Walle.debug.xcconfig */,
-				F7E5D94C2C1A3998F663BE55 /* Pods-Walle.release.xcconfig */,
-				F6D435CFBE34A1E96D726903 /* Pods-Walle-WalleTests.debug.xcconfig */,
-				FDD197651AC3B4D105D24FFD /* Pods-Walle-WalleTests.release.xcconfig */,
+				22169CAADCE108E95A50A854 /* Pods-foodie.debug.xcconfig */,
+				F7E5D94C2C1A3998F663BE55 /* Pods-foodie.release.xcconfig */,
+				F6D435CFBE34A1E96D726903 /* Pods-foodie-foodieTests.debug.xcconfig */,
+				FDD197651AC3B4D105D24FFD /* Pods-foodie-foodieTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -136,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				CC82800F12BD040F79C54371 /* libPods-Walle.a */,
-				B5C51C1F4993159B141D6BC1 /* libPods-Walle-WalleTests.a */,
+				CC82800F12BD040F79C54371 /* libPods-foodie.a */,
+				B5C51C1F4993159B141D6BC1 /* libPods-foodie-foodieTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Walle */,
+				13B07FAE1A68108700A75B9A /* foodie */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* WalleTests */,
+				00E356EF1AD99517003FC87E /* foodieTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				21BF4267F9826AC41E7E2624 /* Pods */,
@@ -168,8 +168,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Walle.app */,
-				00E356EE1AD99517003FC87E /* WalleTests.xctest */,
+				13B07F961A680F5B00A75B9A /* foodie.app */,
+				00E356EE1AD99517003FC87E /* foodieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* WalleTests */ = {
+		00E356ED1AD99517003FC87E /* foodieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WalleTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "foodieTests" */;
 			buildPhases = (
 				E9DDE3CE796D1DD4ED650C48 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -193,14 +193,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = WalleTests;
-			productName = WalleTests;
-			productReference = 00E356EE1AD99517003FC87E /* WalleTests.xctest */;
+			name = foodieTests;
+			productName = foodieTests;
+			productReference = 00E356EE1AD99517003FC87E /* foodieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Walle */ = {
+		13B07F861A680F5B00A75B9A /* foodie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Walle" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "foodie" */;
 			buildPhases = (
 				26E20DC7CE474E6CC4127B25 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -215,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = Walle;
-			productName = Walle;
-			productReference = 13B07F961A680F5B00A75B9A /* Walle.app */;
+			name = foodie;
+			productName = foodie;
+			productReference = 13B07F961A680F5B00A75B9A /* foodie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,7 +237,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Walle" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "foodie" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -250,8 +250,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Walle */,
-				00E356ED1AD99517003FC87E /* WalleTests */,
+				13B07F861A680F5B00A75B9A /* foodie */,
+				00E356ED1AD99517003FC87E /* foodieTests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,15 +302,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		26E20DC7CE474E6CC4127B25 /* [CP] Check Pods Manifest.lock */ = {
@@ -328,7 +328,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Walle-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-foodie-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -341,15 +341,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walle-WalleTests/Pods-Walle-WalleTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodie-foodieTests/Pods-foodie-foodieTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		46D7FE40E55576E4D710EFED /* [CP] Embed Pods Frameworks */ = {
@@ -358,15 +358,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		77C4F74EDB11F1648356DFF0 /* [CP] Copy Pods Resources */ = {
@@ -375,15 +375,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Walle/Pods-Walle-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodie/Pods-foodie-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9DDE3CE796D1DD4ED650C48 /* [CP] Check Pods Manifest.lock */ = {
@@ -401,7 +401,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Walle-WalleTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-foodie-foodieTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -434,7 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* WalleTests.m in Sources */,
+				00E356F31AD99517003FC87E /* foodieTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +452,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Walle */;
+			target = 13B07F861A680F5B00A75B9A /* foodie */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,14 +460,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6D435CFBE34A1E96D726903 /* Pods-Walle-WalleTests.debug.xcconfig */;
+			baseConfigurationReference = F6D435CFBE34A1E96D726903 /* Pods-foodie-foodieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WalleTests/Info.plist;
+				INFOPLIST_FILE = foodieTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,17 +481,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Walle.app/Walle";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie.app/foodie";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDD197651AC3B4D105D24FFD /* Pods-Walle-WalleTests.release.xcconfig */;
+			baseConfigurationReference = FDD197651AC3B4D105D24FFD /* Pods-foodie-foodieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = WalleTests/Info.plist;
+				INFOPLIST_FILE = foodieTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,20 +505,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Walle.app/Walle";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie.app/foodie";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22169CAADCE108E95A50A854 /* Pods-Walle.debug.xcconfig */;
+			baseConfigurationReference = 22169CAADCE108E95A50A854 /* Pods-foodie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NACL7TVN9;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Walle/Info.plist;
+				INFOPLIST_FILE = foodie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +529,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Walle;
+				PRODUCT_NAME = foodie;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -538,13 +538,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7E5D94C2C1A3998F663BE55 /* Pods-Walle.release.xcconfig */;
+			baseConfigurationReference = F7E5D94C2C1A3998F663BE55 /* Pods-foodie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NACL7TVN9;
-				INFOPLIST_FILE = Walle/Info.plist;
+				INFOPLIST_FILE = foodie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +555,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Walle;
+				PRODUCT_NAME = foodie;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -689,7 +689,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WalleTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "foodieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -698,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Walle" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "foodie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -707,7 +707,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Walle" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "foodie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
