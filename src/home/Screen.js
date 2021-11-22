@@ -1,51 +1,141 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
-import { theme } from '../theme';
-import CreateSavingButton from './CreateSavingButton';
-import Cards from './Cards';
+import React, { useEffect, useState } from 'react';
+import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import Header from './Header';
-// import PersonalSavings from './PersonalSavings';
 import TopTabs from './TopTabs';
-import TotalSaved from './Title';
+import QuestionSection from './QuestionSection';
+import MostPopular from './MostPopular';
+import Space from '../shared/Space';
+import { SCR_HEIGHT } from '../utils';
+import LinearGradient from 'react-native-linear-gradient';
+import CardList from './CardList';
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { groupSavings } from '../repo/data';
 import Text from '../shared/Text';
-import Reviews from './Reviews';
+import ScaleAnimation from '../shared/ScaleAnimation';
+
+const gradientColors = [
+    'rgba(0,0,0,0.0)',
+    'rgba(0,0,0,0.0)',
+    'rgba(0,0,0,0.57)',
+    'rgba(0,0,0,0.78)'
+];
 
 const Home = () => {
+    const [showOverlay, setShowOverlay] = useState(false);
+    const opacity = useSharedValue(0);
+
+    onCardAnimationStart = () => {
+        setShowOverlay(true);
+        opacity.value = withTiming(1, { easing: Easing.inOut(Easing.ease) });
+    };
+
+    onCardAnimationEnd = () => {
+        opacity.value = withTiming(0, { easing: Easing.inOut(Easing.ease) });
+        setTimeout(() => {
+            setShowOverlay(false);
+        }, 300);
+    };
+
+    const bottomOverlayStyle = useAnimatedStyle(() => ({
+        opacity: opacity.value,
+    }));
+
+    const bottomOverlayDefaultStyle = {
+        ...StyleSheet.absoluteFillObject,
+        top: SCR_HEIGHT * (2 / 3),
+        zIndex: 1
+    };
+
     return (
         <View style={{
             flex: 1,
-            backgroundColor: theme.primary
+            backgroundColor: '#fff'
         }}>
 
-
-            <Header />
+            <ScaleAnimation>
+                <Header />
+            </ScaleAnimation>
 
             <ScrollView>
+                <ScaleAnimation>
+                    <QuestionSection />
+                </ScaleAnimation>
 
-                <TotalSaved />
+                <ScaleAnimation>
+                    <TopTabs />
+                </ScaleAnimation>
 
-
-                <TopTabs />
-
-
-                <Cards />
+                <Space size={14} />
 
                 <View style={{
-                    zIndex: -1,
-                    // borderTopWidth: 1,
-
+                    zIndex: 3
                 }}>
-                    <Reviews />
+                    <CardList
+                        {...{ groupSavings }}
+                        onAnimationStart={onCardAnimationStart}
+                        onAnimationEnd={onCardAnimationEnd}
+                    />
                 </View>
+
+                <Space size={35} />
+
+                <ScaleAnimation>
+                    <MostPopular />
+                </ScaleAnimation>
             </ScrollView>
 
-            {/* <PersonalSavings /> */}
 
+            {showOverlay && (
+                <Animated.View style={[bottomOverlayDefaultStyle, bottomOverlayStyle]}>
 
+                    <LinearGradient
+                        colors={gradientColors}
+                        style={{
+                            height: '100%',
+                            justifyContent: 'flex-end',
+                            paddingHorizontal: 20,
+                        }}
+                    >
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Arrow
+                                title='Skip'
+                                icon={require('../../assets/icons/arrow-left.png')}
+                            />
+                            <Arrow
+                                title='Add'
+                                icon={require('../../assets/icons/arrow-right.png')}
+                            />
+                        </View>
+                    </LinearGradient>
+                </Animated.View>
+            )}
 
-            {/* <CreateSavingButton /> */}
+        </View>
+    );
+};
 
-
+const Arrow = ({
+    title,
+    icon,
+}) => {
+    return (
+        <View style={{
+            alignItems: 'center'
+        }}>
+            <Image
+                source={icon}
+                style={{
+                    width: 60,
+                    height: 60,
+                    marginBottom: -12
+                }}
+            />
+            <Text style={{
+                fontSize: 16,
+                color: '#fff',
+                paddingBottom: 10,
+                fontWeight: '600'
+            }}>{title}</Text>
         </View>
     );
 };

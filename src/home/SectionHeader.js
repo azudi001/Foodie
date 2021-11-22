@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import Text from '../shared/Text';
-import { LAYOUT_HORIZONTAL_PADDING } from '../utils';
+import { BORDER_WIDTH, LAYOUT_HORIZONTAL_PADDING } from '../utils';
 
 const SectionHeader = ({
     title,
@@ -10,7 +10,7 @@ const SectionHeader = ({
     <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderWidth: 1,
+        borderWidth: BORDER_WIDTH,
     }}>
         <Text style={{
 

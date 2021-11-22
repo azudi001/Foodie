@@ -1,14 +1,9 @@
 export const theme = {
-    primary: '#fff',
-    secondary: '#FF8E18',
-    teriary: '#7D7F8D',
-    card: '#494B5B',
-    card2: '#2D2F3E',
-    // textPrimary: '#fff',
-    textPrimary: 'black',
-    textSecondary: 'black',
-    icon: '#7D7F8D',
-    border: 'rgba(125, 127, 141, .7)',
-    border1: '#2D2F3E'
+
+    primary: 'rgba(36, 36, 36, 1)',
+    border: 'rgba(54,54,54, 1)',
+    borderLight: 'rgba(54,54,54, .5)',
+    tertiary: 'rgba(102, 102, 102, 1)',
+    white: '#fff'
 };
 

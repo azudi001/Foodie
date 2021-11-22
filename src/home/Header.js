@@ -1,9 +1,6 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
-import Text from '../shared/Text';
-import { HEADER_HEIGHT, LAYOUT_HORIZONTAL_PADDING } from '../utils';
-import ArrowLeft from '../../assets/icons/arrow-left.svg';
-import Menu from '../../assets/icons/menu.svg';
+import { View, Image } from 'react-native';
+import { BORDER_WIDTH, HEADER_HEIGHT, LAYOUT_HORIZONTAL_PADDING } from '../utils';
 import { theme } from '../theme';
 import Space from '../shared/Space';
 
@@ -30,7 +27,8 @@ const Header = ({
                     borderBottomLeftRadius: 10,
                     borderBottomRightRadius: 10,
                     overflow: 'hidden',
-                    borderWidth: 1.5
+                    borderWidth: BORDER_WIDTH,
+                    borderColor: theme.border
                 }}
             >
                 <Image
@@ -58,7 +56,8 @@ const Header = ({
                     height: 40,
                     width: 40,
                     borderRadius: 99,
-                    borderWidth: 1.5,
+                    borderWidth: BORDER_WIDTH,
+                    borderColor: theme.border,
                     overflow: 'hidden',
                 }} >
                     <View
@@ -90,7 +89,8 @@ const Header = ({
                     height: 40,
                     width: 40,
                     borderRadius: 99,
-                    borderWidth: 1.5,
+                    borderWidth: BORDER_WIDTH,
+                    borderColor: theme.border,
                     overflow: 'hidden',
                 }} >
                     <View

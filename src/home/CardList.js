@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
-import { HEADER_HEIGHT, LAYOUT_HORIZONTAL_PADDING, BORDER_RADIUS } from '../utils';
-import Arrow from '../../assets/icons/arrow-right.svg';
-import { groupSavings } from '../repo/data';
+import { BORDER_RADIUS, BORDER_WIDTH } from '../utils';
 import { theme } from '../theme';
 import Text from '../shared/Text';
 import { PanGestureHandler } from 'react-native-gesture-handler';
@@ -13,7 +11,9 @@ import Animated, {
     withSpring,
     withTiming,
     Easing,
-    withDelay
+    withDelay,
+    runOnJS,
+    useAnimatedReaction
 } from 'react-native-reanimated';
 import { snapPoint } from 'react-native-redash';
 import Space from '../shared/Space';
@@ -22,42 +22,63 @@ const { height, width } = Dimensions.get('window');
 
 const LIST_HEIGHT = 200;
 const CARD_HEIGHT = 280;
-// const CARD_BORDER_RADIUS = 26;
 
 const CARD_WIDTH = width - 80;
-// const side = (width + CARD_WIDTH + 200) / 2;
 const SPAN_POINTS = [-width, 0, width];
 
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const springConfig = {
+    damping: 5,
+    mass: .5,
+    stiffness: 140,
+    overshootClamping: false,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: .5
+};
 
 const CardList = ({
-    params,
-}) => (
-    <View style={{
-        height: CARD_HEIGHT,
-        width: width,
-        marginVertical: 25,
-        marginTop: 40
-    }}>
-        <View>
-            {groupSavings.map((item, index) => (
-                <Card
-                    key={item.id}
-                    {... { item }}
-                    {...{ index }}
-                />
-            ))}
+    groupSavings,
+    onAnimationStart,
+    onAnimationEnd,
+}) => {
+    const shuffleBack = useSharedValue(false);
+
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        setTimeout(() => {
+            setData(groupSavings);
+        }, 850);
+    }, []);
+
+    return (
+        <View style={{
+            height: CARD_HEIGHT,
+            width: width,
+        }}>
+            <View>
+                {data && data.map((item, index) => (
+                    <Card
+                        key={item.id}
+                        {... { item }}
+                        {...{ index }}
+                        {...{ onAnimationStart }}
+                        {...{ onAnimationEnd }}
+                        {...{ shuffleBack }}
+                    />
+                ))}
+            </View>
         </View>
-    </View>
-);
+    );
+};
 
 
 
 
-const Card = ({ item, index }) => {
+const Card = React.memo(({ item, index, onAnimationStart, onAnimationEnd, shuffleBack }) => {
 
     const DURATION = 250;
     const ROTATEX = 15;
@@ -66,32 +87,38 @@ const Card = ({ item, index }) => {
 
     const x = useSharedValue(width);
     const y = useSharedValue(0);
-    // const theta = Math.random() * 20 - 18;
     const theta = randomNumber(-4, 4);
     const rotateZ = useSharedValue(0);
     const rotateX = useSharedValue(ROTATEX);
     const scale = useSharedValue(1);
 
-    const height = useSharedValue(CARD_HEIGHT);
+    const cardHeight = useSharedValue(CARD_HEIGHT);
     const opacity = useSharedValue(0);
 
     useEffect(() => {
         const delay = index * DURATION;
         x.value = withDelay(
             delay,
-            withTiming(0, {
-                duration: DURATION,
-                easing: Easing.inOut(Easing.ease),
-            }));
+            withSpring(0));
 
-        rotateZ.value = withDelay(
-            delay,
-            withTiming(theta, {
-                duration: DURATION,
-                easing: Easing.inOut(Easing.ease),
-            }));
+        rotateZ.value = withDelay(delay, withSpring(theta));
     }, [index, rotateZ, theta, y]);
 
+    useAnimatedReaction(
+        () => shuffleBack.value,
+        (v) => {
+            if (v) {
+                const duration = 150 * index;
+                x.value = withDelay(
+                    duration,
+                    withSpring(0, {}, () => {
+                        shuffleBack.value = false;
+                    })
+                );
+                rotateZ.value = withDelay(duration, withSpring(theta));
+            }
+        }
+    );
 
     const onGestureEvent = useAnimatedGestureHandler({
         onStart: (_, ctx) => {
@@ -100,8 +127,11 @@ const Card = ({ item, index }) => {
             scale.value = withTiming(1.1, { easing: Easing.inOut(Easing.ease) });
             rotateZ.value = withTiming(0, { easing: Easing.inOut(Easing.ease) });
             rotateX.value = withTiming(0, { easing: Easing.inOut(Easing.ease) });
-            height.value = withTiming(CARD_HEIGHT + DETAIL_SECTION_HEIGHT, { easing: Easing.inOut(Easing.ease) });
+            cardHeight.value = withTiming(CARD_HEIGHT + DETAIL_SECTION_HEIGHT, { easing: Easing.inOut(Easing.ease) });
             opacity.value = withDelay(80, withTiming(1, { easing: Easing.inOut(Easing.ease) }));
+
+            runOnJS(onAnimationStart)();
+
         },
         onActive: ({ translationX, translationY }, ctx) => {
             if (translationY < -90) {
@@ -116,24 +146,26 @@ const Card = ({ item, index }) => {
             x.value = withTiming(dest);
             y.value = withTiming(0);
             scale.value = withTiming(1, { easing: Easing.inOut(Easing.ease) });
-            // scale.value = withTiming(1, {}, () => {
-            //     const isLast = index === 0;
-            //     const isSwipedLeftOrRight = dest !== 0;
-            //     if (isLast && isSwipedLeftOrRight) {
-            //         shuffleBack.value = true;
-            //     }
-            // });
+            scale.value = withTiming(1, {}, () => {
+                const isLast = index === 0;
+                const isSwipedLeftOrRight = dest !== 0;
+                if (isLast && isSwipedLeftOrRight) {
+                    shuffleBack.value = true;
+                }
+            });
             rotateZ.value = withTiming(theta, { easing: Easing.inOut(Easing.ease) });
             rotateX.value = withTiming(ROTATEX, { easing: Easing.inOut(Easing.ease) });
-            height.value = withTiming(CARD_HEIGHT, { easing: Easing.inOut(Easing.ease) });
+            cardHeight.value = withTiming(CARD_HEIGHT, { easing: Easing.inOut(Easing.ease) });
             opacity.value = withTiming(0, { duration: 100, easing: Easing.inOut(Easing.ease) });
+
+            runOnJS(onAnimationEnd)();
 
         }
 
     });
 
 
-    const style = useAnimatedStyle(() => ({
+    const cardStyle = useAnimatedStyle(() => ({
         transform: [
             { perspective: 2000 },
             { translateX: x.value },
@@ -142,7 +174,8 @@ const Card = ({ item, index }) => {
             { rotateZ: `${rotateZ.value}deg` },
             { scale: scale.value }
         ],
-        height: height.value
+        height: cardHeight.value,
+
     }));
 
     const detailSectionStyle = useAnimatedStyle(() => ({
@@ -150,19 +183,38 @@ const Card = ({ item, index }) => {
     }));
 
 
-    return (
+    const renderIconAndText = (imgPath, text) => (
+        <View style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+        }}>
+            <Image
+                source={imgPath}
+                style={{
+                    height: 17,
+                    width: 17,
+                    resizeMode: 'cover',
+                }}
+            />
+            <Text style={{
+                color: theme.tertiary,
+                fontSize: 13,
+            }}>
+                {text}
+            </Text>
+        </View>
+    );
 
+
+    return (
         <View style={{
             ...StyleSheet.absoluteFillObject,
             alignItems: 'center',
-            // overflow: 'hidden',
-            // backgroundColor: 'yellow',
-
         }} pointerEvents="box-none">
             <PanGestureHandler
                 onGestureEvent={onGestureEvent}
             >
-                <Animated.View style={[styles.cardDefaultStyle, style]}>
+                <Animated.View style={[styles.cardDefaultStyle, cardStyle]}>
                     <Image
                         source={item.img}
                         style={{
@@ -172,111 +224,69 @@ const Card = ({ item, index }) => {
                             borderRadius: BORDER_RADIUS,
                         }}
                     />
-                    {/* //FIXME: extract a method here */}
                     <View style={{
                         flexDirection: 'row',
                         paddingVertical: 12,
-                        paddingHorizontal: 14,
-                        // backgroundColor: 'yellow'
+                        paddingHorizontal: 16,
                     }}>
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
 
-                        }}>
-                            <Text>
-                                ICON
-                            </Text>
-                            <Space horizontal size={5} />
-                            <Text>
-                                4.3
-                            </Text>
-                        </View>
+                        {renderIconAndText(require('../../assets/icons/star.png'), '4.6')}
                         <Space horizontal size={8} />
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                        }}>
-                            <Text>
-                                ICON
-                            </Text>
-                            <Space horizontal size={5} />
-                            <Text>
-                                4.3
-                            </Text>
-                        </View>
+                        {renderIconAndText(require('../../assets/icons/hourglass.png'), '15 min')}
                         <Space horizontal size={8} />
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                        }}>
-                            <Text>
-                                CALIcon
-                            </Text>
-                            <Space horizontal size={5} />
-                            <Text>
-                                233
-                            </Text>
-                        </View>
+                        {renderIconAndText(require('../../assets/icons/energy.png'), '230 cal')}
+
                         <View style={{ flex: 1 }} />
 
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            // marginTop: 10,
-                            // marginLeft: 10,
+                        <Text style={{
+                            fontWeight: '600',
+                            fontSize: 16,
                         }}>
-
-                            <Text style={{
-                                fontWeight: '600',
-                                fontSize: 16
-                            }}>
-                                $24.5
-                            </Text>
-                        </View>
+                            {`$${item.price}`}
+                        </Text>
                     </View>
 
                     <Animated.View style={[styles.detailSectionDefaultStyle, detailSectionStyle]}>
                         <Text style={{
                             fontSize: 16,
-                            fontWeight: '600'
-                        }}>Hawaiian Pizza with Mozzirilla cheese</Text>
+                            fontWeight: '600',
+                            color: theme.primary
+                        }}>{item.title}</Text>
                         <Space size={5} />
-                        <Text>Hawaiian Pizza with Mozzirilla cheese Hawaiian Pizza with Mozzirilla cheese Hawaiian Pizza with Mozzirilla</Text>
+                        <Text style={{
+                            fontSize: 14,
+                        }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.sed do eiusmod tempor incididunt ut labore.</Text>
                     </Animated.View>
                 </Animated.View>
             </PanGestureHandler>
+
         </View>
     );
-};
+}, () => true);
 
 const styles = StyleSheet.create({
     cardDefaultStyle: {
-        // height: CARD_HEIGHT,
         width: CARD_WIDTH,
         backgroundColor: '#fff',
-        borderWidth: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
+        borderWidth: BORDER_WIDTH,
+        borderColor: theme.border,
         padding: 3,
-        // margin: 10,
         borderRadius: BORDER_RADIUS + 4,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 4.65,
-        elevation: 5,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 3,
+        // },
+        // shadowOpacity: 0.15,
+        // shadowRadius: 5.65,
+        // elevation: 5,
     },
     detailSectionDefaultStyle: {
         flex: 1,
-        paddingHorizontal: 14,
-        paddingTop: 8,
+        paddingHorizontal: 16,
+        paddingTop: 5,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
-        // backgroundColor: 'yellow'
     }
 });
 

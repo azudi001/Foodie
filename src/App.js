@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaView style={{ flex: 1, backgroundColor: theme.primary }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.white }}>
         <StatusBar barStyle='light-content' />
         <Home />
       </SafeAreaView>

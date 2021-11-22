@@ -1,34 +1,62 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import Text from '../shared/Text';
-import { reviews } from '../repo/data';
+import { mostPopular } from '../repo/data';
 import Space from '../shared/Space';
-import { LAYOUT_HORIZONTAL_PADDING, BORDER_RADIUS } from '../utils';
+import { LAYOUT_HORIZONTAL_PADDING, BORDER_RADIUS, BORDER_WIDTH } from '../utils';
+import LinearGradient from 'react-native-linear-gradient';
+import { theme } from '../theme';
 
-const Reviews = ({
-    params,
-}) => {
+export const gradientColors = [
+    'rgba(0,0,0,0.0)',
+    'rgba(0,0,0,0)',
+    'rgba(0,0,0,0.47)',
+    'rgba(0,0,0,0.76)'
+];
+
+const renderIconAndText = (imgPath, text) => (
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+    }}>
+        <Image
+            source={imgPath}
+            style={{
+                height: 20,
+                width: 20,
+                resizeMode: 'cover',
+            }}
+        />
+        <Text style={{
+            color: theme.tertiary,
+            fontSize: 15,
+            fontWeight: '600',
+            color: '#fff'
+        }}>
+            {text}
+        </Text>
+    </View>
+);
+
+const MostPopular = () => {
     return (
         <View style={{
             paddingHorizontal: LAYOUT_HORIZONTAL_PADDING,
-            paddingVertical: 20,
         }}>
             <Text
                 style={{
                     fontSize: 20,
                     fontWeight: '600',
+                    color: theme.primary
                 }}
             >Most Popular</Text>
 
             <Space size={18} />
 
-            {reviews.map((review, index) => (
-                <View style={{
+            {mostPopular.map((post, index) => (
+                <View key={index} style={{
                     height: 222,
                     marginBottom: 20,
-                    // justifyContent: 'flex-end',
-                    // alignItems: 'center',
-                    // backgroundColor: 'yellow'
                 }}>
                     <View style={{
                         position: 'absolute',
@@ -38,13 +66,14 @@ const Reviews = ({
                         left: 0,
                         height: '100%',
                         width: '100%',
-                        borderWidth: 1,
+                        borderWidth: BORDER_WIDTH,
+                        borderColor: theme.border,
                         borderRadius: BORDER_RADIUS + 4,
                         overflow: 'hidden',
-                        padding: 3
+                        padding: 3,
                     }}>
                         <Image
-                            source={review.bgImg}
+                            source={post.bgImg}
                             style={{
                                 height: '100%',
                                 width: '100%',
@@ -58,38 +87,37 @@ const Reviews = ({
                         position: 'absolute',
                         top: 22,
                         left: 22,
-                        borderWidth: 1,
+                        borderWidth: BORDER_WIDTH,
+                        borderColor: theme.border,
                         borderRadius: BORDER_RADIUS,
                         justifyContent: 'center',
                         paddingHorizontal: 14,
-                        paddingVertical: 8,
-                        backgroundColor: 'yellow',
+                        paddingVertical: 6,
+                        backgroundColor: '#ffe252',
                         flexDirection: 'row',
                         alignItems: 'center',
                     }}>
+
                         <Text style={{
-                            fontSize: 14,
+                            fontSize: 13,
                             fontWeight: '500',
                         }}>Breakfast</Text>
+
                     </View>
 
                     <View style={{
                         position: 'absolute',
                         top: 22,
                         right: 22,
-                        borderWidth: 1,
-                        borderRadius: BORDER_RADIUS,
                         justifyContent: 'center',
-                        padding: 8,
-                        backgroundColor: 'yellow',
+                        paddingVertical: 6,
                         flexDirection: 'row',
                         alignItems: 'center',
                     }}>
-                        <Text style={{
-                            fontSize: 14,
-                            fontWeight: '500',
-                        }}>ICON</Text>
+                        {renderIconAndText(require('../../assets/icons/star.png'), '4.6')}
                     </View>
+
+                    <LinearGradient colors={gradientColors} style={styles.gradientLayer} />
 
                     <View style={{
                         position: 'absolute',
@@ -98,7 +126,7 @@ const Reviews = ({
                         right: 22,
                     }}>
                         <Text style={{
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: '600',
                             color: '#fff'
                         }}>
@@ -107,10 +135,11 @@ const Reviews = ({
                         <Space size={6} />
                         <Text style={{
                             fontSize: 14,
-                            fontWeight: '600',
-                            color: '#fff'
+                            fontWeight: '400',
+                            color: '#fff',
+                            lineHeight: 18,
                         }}>
-                            This is one hella cheese burger, you've got no idea where the taste is going to take, trust me, one bite is you go for
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </Text>
                     </View>
                 </View>
@@ -119,25 +148,15 @@ const Reviews = ({
     );
 };
 
-export default Reviews;
+const styles = StyleSheet.create({
+    gradientLayer: {
+        ...StyleSheet.absoluteFillObject,
+        bottom: 4,
+        left: 4,
+        right: 4,
+        borderBottomLeftRadius: BORDER_RADIUS,
+        borderBottomRightRadius: BORDER_RADIUS,
+    },
+});
 
-
-// <View style={{
-//                             flexDirection: 'row',
-//                             alignItems: 'center'
-//                         }}>
-//                             <Text>ICON</Text>
-//                             <Space horizontal size={5} />
-//                             <Text>4.3</Text>
-//                         </View>
-
-//                         <Space horizontal size={8} />
-
-//                         <View style={{
-//                             flexDirection: 'row',
-//                             alignItems: 'center'
-//                         }}>
-//                             <Text>ICON</Text>
-//                             <Space horizontal size={5} />
-//                             <Text>4.3</Text>
-//                         </View>
+export default MostPopular;
