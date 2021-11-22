@@ -1,11 +1,11 @@
-# Wonderland 👑
+# Foodie 👑
 A restaurant app concept built using React Native.
 
 
 Images:
 https://unsplash.com/
 
-![](WonderlandScreenshot.png)
+![](FoodieScreenshot.png)
 
 **Installation**
 

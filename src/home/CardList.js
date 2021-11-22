@@ -1,3 +1,18 @@
+
+
+
+///
+///     (╯ ͡❛ ͜ʖ ͡❛)╯┻━┻
+/// **************************************************************
+/// Instagram @ys.sherzad  *************************
+/// Twitter @ys_sherzad  ********************
+/// **************************************************************
+/// "Make Everyday Count" 🇦🇫
+///
+///
+
+
+
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
 import { BORDER_RADIUS, BORDER_WIDTH } from '../utils';
@@ -18,9 +33,8 @@ import Animated, {
 import { snapPoint } from 'react-native-redash';
 import Space from '../shared/Space';
 
-const { height, width } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-const LIST_HEIGHT = 200;
 const CARD_HEIGHT = 280;
 
 const CARD_WIDTH = width - 80;
@@ -29,15 +43,6 @@ const SPAN_POINTS = [-width, 0, width];
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-const springConfig = {
-    damping: 5,
-    mass: .5,
-    stiffness: 140,
-    overshootClamping: false,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: .5
-};
 
 const CardList = ({
     groupSavings,
