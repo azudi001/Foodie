@@ -34,5 +34,5 @@ yarn android
 Feel free to create an issue if you face any problems running the project.
 
 **💬🥂 Hit me up:**
-[ysherzad@dev](https://ysherzad.dev)
+[ysherzad.dev](https://ysherzad.dev)
 [@Instagram](https://www.instagram.com/ys.sherzad/)
