@@ -17,7 +17,7 @@ export default Text;
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'Maven Pro',
+        fontFamily: 'RedHatDisplay-Black',
         color: theme.primary,
     }
 });
